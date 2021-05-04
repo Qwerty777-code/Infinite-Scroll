@@ -1,17 +1,16 @@
-
-const imageContainer = document.getElementById('image-container');
+(function () {
+  const imageContainer = document.getElementById('image-container');
 const loader = document.getElementById('loader');
 
 let ready = false;
 let imagesLoaded = 0;
 let totalImages = 0;
-let photoArray = [];
 let isInitialLoad = true;
 
 // Unsplash API
 let initialCount = 5;
 const query = 'car';
-const apiKey = 'mqxyFt7D_dVyOeeY2OcGOrU_YZ6NYnsMM1v3OAnpayo';
+let apiKey = 'mqxyFt7D_dVyOeeY2OcGOrU_YZ6NYnsMM1v3OAnpayo';
 let apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&query=${query}&count=${initialCount}`;
 
 function updateAPIURLWithNewCount (picCount) {
@@ -86,3 +85,4 @@ window.addEventListener('scroll', () => {
 
 // On Load
 getPhotos();
+})();
